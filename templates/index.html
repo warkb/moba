@@ -52,7 +52,12 @@
         }
     });
     socket.emit('new player');
-    setInterval(function () {
-        socket.emit('movement', movement);
-    }, 1000 / 60);
+    //setInterval(function () {
+    //    socket.emit('movement', movement);
+    //}, 1000 / 60);
+
+    // тест
+    socket.on('hi', function (data) {
+        alert(data);
+    });
 </script>
