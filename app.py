@@ -4,9 +4,6 @@ from time import sleep
 
 players = {}
 
-
-
-
 app = Flask(__name__)
 
 def send_all_players():
@@ -19,7 +16,7 @@ def send_all_players():
                    namespace='/')
 
 socketio = SocketIO(app, async_handlers=True, 
-	ping_interval=0.1, ping_timeout=0.5)
+	ping_interval=0.5, ping_timeout=0.5)
 socketio.start_background_task(send_all_players)
 
 from views import index

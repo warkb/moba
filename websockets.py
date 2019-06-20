@@ -18,6 +18,6 @@ def handle_disconnect():
     playerid = request.sid
     del players[playerid]
 
-@socketio.on('movement')
+@socketio.on('new_dest_point')
 def handle_movement(movement):
     players[request.sid].move(movement)

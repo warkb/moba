@@ -2,76 +2,10 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 <title>Websockets tutorial</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
 <div class=page>
     <canvas id="canvas">
 
     </canvas>
 </div>
-<script>
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
-    var socket = io.connect('http://' + document.domain + ':' + location.port);
-    var socket = io();
-    // чё нажал клиент
-    var movement = {
-        up: false,
-        down: false,
-        left: false,
-        right: false
-    };
-    // true - если клавиша нажата
-    document.addEventListener('keydown', function (event) {
-        switch (event.keyCode) {
-            case 65: // A
-                movement.left = true;
-                break;
-            case 87: // W
-                movement.up = true;
-                break;
-            case 68: // D
-                movement.right = true;
-                break;
-            case 83: // S
-                movement.down = true;
-                break;
-        }
-    });
-    // false - если отжата
-    document.addEventListener('keyup', function (event) {
-        switch (event.keyCode) {
-            case 65: // A
-                movement.left = false;
-                break;
-            case 87: // W
-                movement.up = false;
-                break;
-            case 68: // D
-                movement.right = false;
-                break;
-            case 83: // S
-                movement.down = false;
-                break;
-        }
-    });
-    socket.emit('new player');
-    setInterval(function () {
-        socket.emit('movement', movement);
-    }, 1000 / 60);
-    socket.on('regular_msg', function (data) {
-        // подписываемся на данные, которые мы регулярно получаем от сервера
-        context.clearRect(0, 0, 1280, 1024);
-        context.width = 1280;
-        context.height = 1024;
-        context.fillStyle = 'green';
-        for (var key in data) {
-            let player = data[key];
-            context.beginPath();
-            context.arc(player.x, player.y, 10, 0, 2 * Math.PI);
-            context.fill();
-        }
-    });
-    // тест
-    socket.on('hi', function (data) {
-
-    });
-</script>
+<script src="{{ url_for('static', filename='client.js') }}"></script>
