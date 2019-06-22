@@ -9,14 +9,14 @@ app = Flask(__name__)
 def send_all_players():
       with app.app_context():
           while True:
-              sleep(1 / 30)
+              sleep(1)
               emit('regular_msg',
                    [player.get_dict() for player in players.values()],
                    broadcast=True,
                    namespace='/')
 
 socketio = SocketIO(app, async_handlers=True, 
-	ping_interval=0.5, ping_timeout=0.5)
+	ping_interval=0.5, ping_timeout=2)
 socketio.start_background_task(send_all_players)
 
 from views import index

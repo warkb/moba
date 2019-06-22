@@ -16,6 +16,15 @@ class Player():
         self.speed = 100
         self.dest_point = None # точка, куда хочет попасть герой
 
+    def move_to_point(self, x, y):
+        """
+        Перемещает игрока в указанную точку
+        :param x:
+        :param y:
+        :return:
+        """
+        self.point.x, self.point.y = x, y
+
     def get_dict(self):
         return {'x': self.point.x, 'y': self.point.y}
 

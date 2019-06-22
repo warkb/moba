@@ -19,5 +19,5 @@ def handle_disconnect():
     del players[playerid]
 
 @socketio.on('new_dest_point')
-def handle_movement(movement):
-    players[request.sid].move(movement)
+def handle_movement(json):
+    players[request.sid].move_to_point(json['x'], json['y'])
