@@ -16,9 +16,7 @@ https://www.python.org/ftp/python/3.7.3/python-3.7.3.exe
 9. Делаем три консольные команды:
     
     set FLASK_APP=app.py
-    
     set FLASK_DEBUG=1
-    
     flask run
     
 10. В консольке появится ссылка на сайт, который надо вбить в браузере: localhost:5000
