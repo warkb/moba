@@ -12,12 +12,15 @@ https://www.python.org/ftp/python/3.7.3/python-3.7.3.exe
 8. Делаем
     
     pip install -r requirements.txt
+    
 Это нужно для того, чтобы поставить все зависимости для нашено проекта, описанные в файлике requirements.txt	
 9. Делаем три консольные команды:
     
     set FLASK_APP=app.py
-    set FLASK_DEBUG=1
-    flask run
     
+    set FLASK_DEBUG=1
+    
+    flask run
+9. То же самое можно сделать командой run.sh в консоли в папке с проектом
 10. В консольке появится ссылка на сайт, который надо вбить в браузере: localhost:5000
 11. PROFIT!
