@@ -1,5 +1,20 @@
-# TUTORIAL: Create an application with websockets and flask
-Code for Websockets tutorial using flask
-
-Code for the [tutorial about using flask and websockets](https://tutorials.technology/tutorials/61-Create-an-application-with-websockets-and-flask.html)
-"# moba" 
+# Кароч, как это чудо запустить:
+1. Вот по этой ссылочке скачиваем питончик:
+https://www.python.org/ftp/python/3.7.3/python-3.7.3.exe
+2. При установке на первом экране поставить галочку "Add Python3.7 to PATH"
+3. Далее скачиваем вот отсюда GIT: https://gitforwindows.org
+4. При установке обязательно указываем ему, что нужно добавиться в PATH, чтобы можно было пользоваться им из консоли
+5. Ок. Дальше открываем консоль и переходим в папку, куда мы хотим склонировать проект
+6. Делаем 
+    git clone https://github.com/warkb/moba.git
+. Переходим в папку moba
+. Делаем
+    pip install -r requirements.txt
+Это нужно для того, чтобы поставить все зависимости для нашено проекта, описанные в файлике requirements.txt	
+. Делаем три консольные команды:
+    set FLASK_APP=app.py
+    set FLASK_DEBUG=1
+    flask run
+    
+. В консольке появится ссылка на сайт, который надо вбить в браузере: localhost:5000
+. PROFIT!
