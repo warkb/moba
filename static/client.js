@@ -1,6 +1,6 @@
 var canvas = document.getElementById('canvas');
 var context = new LibCanvas.Context2D(canvas);
-var socket = io.connect('http://' + document.domain + ':' + location.port);
+var socket = io.connect('https://' + document.domain + ':' + location.port);
 var socket = io();
 var full_widts = 1280;
 var full_height = 1024;
