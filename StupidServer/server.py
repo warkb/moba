@@ -11,6 +11,8 @@ from aiohttp import web
 import webbrowser
 
 import settings
+# закоменть, когда будешь выкатывать на релиз
+# settings.DEBUG = True
 
 async def index(request):
     # обработчик запроса
@@ -29,6 +31,7 @@ app.router.add_static('/static/',
                       path=f'{os.path.dirname(sys.argv[0])}/static', name='static')
 
 # запускаем приложение
-webbrowser.register('chrome', None, webbrowser.Chrome('chrome'))
-webbrowser.get().open(f'http://127.0.0.1:{settings.PORT}')
-web.run_app(app, port=8800)
+if settings.DEBUG:
+    webbrowser.register('chrome', None, webbrowser.Chrome('chrome'))
+    webbrowser.get().open(f'http://127.0.0.1:{settings.PORT}')
+    web.run_app(app, port=8800)
