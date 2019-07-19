@@ -34,7 +34,7 @@ app.router.add_get('/', index)
 
 # добавляем маршрут для статики
 app.router.add_static('/static/',
-                      path=f'{settings.FULL_STATIC_DIR}/static', name='static')
+                      path=f'{settings.FULL_STATIC_DIR}', name='static')
 
 # запускаем приложение
 if settings.DEBUG:
