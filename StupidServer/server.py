@@ -10,9 +10,17 @@ import os
 from aiohttp import web
 import webbrowser
 
-import settings
+try:
+    import settings
+except ImportError:
+    pass
+
+try:
+    from . import settings
+except ImportError:
+    pass
 # закоменть, когда будешь выкатывать на релиз
-# settings.DEBUG = True
+settings.DEBUG = True
 
 async def index(request):
     # обработчик запроса
