@@ -20,7 +20,7 @@ try:
 except ImportError:
     pass
 # закоменть, когда будешь выкатывать на релиз
-settings.DEBUG = True
+# settings.DEBUG = True
 
 async def index(request):
     # обработчик запроса
