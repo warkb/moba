@@ -26,8 +26,7 @@ app.router.add_get('/', index)
 
 # добавляем маршрут для статики
 app.router.add_static('/static/',
-                      path=f'{os.path.dirname(sys.argv[0])}/static',
-                      name='static')
+                      path=f'{os.path.dirname(sys.argv[0])}/static', name='static')
 
 # запускаем приложение
 webbrowser.register('chrome', None, webbrowser.Chrome('chrome'))
