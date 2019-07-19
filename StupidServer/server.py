@@ -4,6 +4,7 @@
 чтобы можно было его спокойно наращивать
 TODO: Делаем простой сайт, со стилем и скриптом
 """
+import sys
 import os
 
 from aiohttp import web
@@ -25,7 +26,7 @@ app.router.add_get('/', index)
 
 # добавляем маршрут для статики
 app.router.add_static('/static/',
-                      path=f'{os.getcwd()}/static',
+                      path=f'{os.path.dirname(sys.argv[0])}/static',
                       name='static')
 
 # запускаем приложение
