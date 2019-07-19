@@ -22,7 +22,7 @@ except ImportError:
 
 async def index(request):
     # обработчик запроса
-    with open('static/index.html', 'rb') as f:
+    with open(f'{settings.FULL_STATIC_DIR}/index.html', 'rb') as f:
         return web.Response(body=f.read(), content_type='text/html')
 
 
@@ -34,7 +34,7 @@ app.router.add_get('/', index)
 
 # добавляем маршрут для статики
 app.router.add_static('/static/',
-                      path=f'{os.path.dirname(sys.argv[0])}/static', name='static')
+                      path=f'{settings.FULL_STATIC_DIR}/static', name='static')
 
 # запускаем приложение
 if settings.DEBUG:
