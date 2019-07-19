@@ -1,1 +1,1 @@
-web: gunicorn StupidServer.server:app
+web: python StupidServer/server.py

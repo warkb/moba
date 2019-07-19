@@ -19,8 +19,6 @@ try:
     from . import settings
 except ImportError:
     pass
-# закоменть, когда будешь выкатывать на релиз
-# settings.DEBUG = True
 
 async def index(request):
     # обработчик запроса
@@ -42,4 +40,4 @@ app.router.add_static('/static/',
 if settings.DEBUG:
     webbrowser.register('chrome', None, webbrowser.Chrome('chrome'))
     webbrowser.get().open(f'http://127.0.0.1:{settings.PORT}')
-    web.run_app(app, port=8800)
+web.run_app(app, port=settings.PORT)
